@@ -1,0 +1,7 @@
+URxvt*background: black
+URxvt*foreground: white
+URxvt*scrollBar: false
+URxvt*transparent: true
+URxvt*shading: 15
+
+#include ".config/urxvt-xresources"
