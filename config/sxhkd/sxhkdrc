@@ -6,6 +6,13 @@
 alt + Return
 	urxvt
 
+alt + shift + Return
+	urxvt -e bash -c "ssh desktop"
+
+# Emacs
+alt + e
+  emacs
+
 # program launcher
 alt + space
 	dmenu_run
