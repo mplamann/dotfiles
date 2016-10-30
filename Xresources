@@ -3,5 +3,6 @@ URxvt*foreground: white
 URxvt*scrollBar: false
 URxvt*transparent: true
 URxvt*shading: 15
+URxvt*iso14755: false
 
 #include ".config/urxvt-xresources"
