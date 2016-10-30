@@ -256,6 +256,9 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
+  (global-unset-key (kbd "C-r"))
+  (global-set-key (kbd "C-r") 'search-backward)
+
   (spacemacs/set-leader-keys
     "ci" 'timeclock-in
     "co" 'timeclock-out)
