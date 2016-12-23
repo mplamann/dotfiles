@@ -30,7 +30,7 @@ values."
      git
      ;; intero
      haskell
-     java
+     ;; java
      (latex :variables latex-enable-auto-fill nil)
      sml
      ;; markdown
@@ -264,7 +264,8 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys
     "ci" 'timeclock-in
     "co" 'timeclock-out
-    "SPC" 'ace-jump-mode)
+    "SPC" 'ace-jump-mode
+    "ax" 'shell)
 
   (eval-after-load 'helm-mode
     '(add-to-list 'helm-completing-read-handlers-alist '(find-file)))
