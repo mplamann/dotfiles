@@ -5,4 +5,7 @@ URxvt*transparent: true
 URxvt*shading: 15
 URxvt*iso14755: false
 
-#include ".config/urxvt-xresources"
+URxvt.keysym.Shift-Control-V: prel:clipboard:paste
+URxvt.perl-ext-common: default,clipboard
+
+#include "/home/mplamann/.config/urxvt-xresources"

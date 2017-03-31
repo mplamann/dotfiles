@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 source ~/.bash_profile
 
@@ -24,7 +24,11 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a dota2 desktop='^0' state=fullscreen
+bspc rule -a Steam desktop='^4' state=floating
 PATH=~/scripts:${PATH} changebg ~/Pictures/`ls ~/Pictures | shuf -n 1`
 
 bspc config top_padding 15
 PATH=~/scripts:${PATH} panel 1>/home/mplamann/log 2>/home/mplamann/log &
+
+xrandr --output DP-2 --rate 143.98 --left-of HDMI-0

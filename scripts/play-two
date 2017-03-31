@@ -1,0 +1,5 @@
+#!/bin/bash
+mplayer "$1" &
+mplayer "$2" &
+wait
+wait

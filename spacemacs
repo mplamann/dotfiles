@@ -29,8 +29,9 @@ values."
      git
      ;; intero
      haskell
-     ;; java
+     java
      (latex :variables latex-enable-auto-fill nil)
+     ocaml
      sml
      ;; markdown
      ;; org
@@ -47,7 +48,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(undo-tree helm helm-gitignore helm-swoop helm-ag helm-core helm-descbinds helm-flx helm-make helm-mode-manager helm-projectile helm-themes ace-jump-helm-line ido-vertical-mode flx-ido ido)
+   dotspacemacs-excluded-packages '(undo-tree
+                                   ;; helm helm-gitignore helm-swoop helm-ag helm-core helm-descbinds helm-flx helm-make helm-mode-manager helm-projectile helm-themes ace-jump-helm-line ido-vertical-mode flx-ido ido
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -273,6 +276,13 @@ layers configuration. You are free to put any user code."
 
   (setq eclim-eclipse-dirs "/usr/lib/eclipse"
         eclim-executable "/usr/lib/eclipse/eclim")
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((sh . t)))
+
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq electric-indent-chars (delq ?: electric-indent-chars))))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -284,7 +294,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auctex-latexmk slime shm ob-sml sml-mode hindent helm-gitignore request haskell-snippets ghc haskell-mode cmm-mode auctex zenburn-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav eclim disaster define-word cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (helm-swoop helm-hoogle flx helm helm-core uuidgen powerline slime-company projectile spinner org link-hint intero flycheck pkg-info epl hydra hlint-refactor parent-mode hide-comnt git-link eyebrowse evil-visual-mark-mode evil-unimpaired magit magit-popup git-commit with-editor smartparens iedit evil-ediff anzu evil goto-chg undo-tree highlight yasnippet dumb-jump popup f s diminish company-ghci company-ghc company column-enforce-mode bind-map bind-key packed dash async avy package-build highlight-symbol color-identifiers-mode utop tuareg caml ocp-indent merlin auctex-latexmk slime shm ob-sml sml-mode hindent helm-gitignore request haskell-snippets ghc haskell-mode cmm-mode auctex zenburn-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package toc-org spacemacs-theme spaceline smooth-scrolling smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree move-text magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav eclim disaster define-word cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

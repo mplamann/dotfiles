@@ -1,1 +1,1 @@
-wine .wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net\ Launcher.exe
+WINEPREFIX="$HOME/.wine32" WINEARCH=win32 wine ~/.wine32/drive_c/Program\ Files/Blizzard\ App/Battle.net\ Launcher.exe

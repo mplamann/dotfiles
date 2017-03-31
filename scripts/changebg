@@ -1,5 +1,5 @@
 #!/bin/sh
 
-feh --bg-scale "$1"
+feh --bg-max "$1"
 schemer2 -format img::urxvt -in "$1" -out ~/.config/urxvt-xresources
 xrdb ~/.Xresources
